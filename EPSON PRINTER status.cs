@@ -1,8 +1,8 @@
-
+ï»¿
 Imports com.epson.pos
 
 ''' <summary>
-	''' ƒhƒƒA‚ª•Â‚Ü‚é‚©ƒGƒ‰[ƒXƒe[ƒ^ƒX‚ª•Ô‚³‚ê‚é‚Ü‚Åƒ‹[ƒv
+	''' ãƒ‰ãƒ­ã‚¢ãŒé–‰ã¾ã‚‹ã‹ã‚¨ãƒ©ãƒ¼ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ãŒè¿”ã•ã‚Œã‚‹ã¾ã§ãƒ«ãƒ¼ãƒ—
 	''' </summary>
 	''' <remarks></remarks>
 	Private Sub loopCloseDrawer()
@@ -10,12 +10,12 @@ Imports com.epson.pos
 		AddHandler m_objAPI.StatusCallback, AddressOf PrinterStatusMonitoring
 
 		Try
-			' ƒvƒŠƒ“ƒ^‚Æ’ÊMŠJn
-			If m_objAPI.OpenMonPrinter(driver.OpenType.TYPE_PRINTER, ƒŒƒV[ƒgƒvƒŠƒ“ƒ^–¼) = driver.ErrorCode.SUCCESS Then
+			' ãƒ—ãƒªãƒ³ã‚¿ã¨é€šä¿¡é–‹å§‹
+			If m_objAPI.OpenMonPrinter(driver.OpenType.TYPE_PRINTER, ãƒ¬ã‚·ãƒ¼ãƒˆãƒ—ãƒªãƒ³ã‚¿å) = driver.ErrorCode.SUCCESS Then
 
 				isDrawerSignal = False
 
-				'ƒR[ƒ‹ƒoƒbƒN‚ÆƒCƒxƒ“ƒgŠÖ”‚Ì˜A“®ŠJn
+				'ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã¨ã‚¤ãƒ™ãƒ³ãƒˆé–¢æ•°ã®é€£å‹•é–‹å§‹
 				If m_objAPI.SetStatusBack() = driver.ErrorCode.SUCCESS Then
 
 					Do
@@ -25,18 +25,18 @@ Imports com.epson.pos
 					Loop While Not isDrawerSignal
 
 				Else
-					MessageBox.Show("ƒR[ƒ‹ƒoƒbƒNŠÖ”‚Ì“o˜^‚É¸”s‚µ‚Ü‚µ‚½B", "Program09", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+					MessageBox.Show("ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°ã®ç™»éŒ²ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "Program09", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 				End If
 
 				If Not m_objAPI.CloseMonPrinter = driver.ErrorCode.SUCCESS Then
-					MessageBox.Show("ŠÄ‹ƒvƒŠƒ“ƒ^‚ÌƒNƒ[ƒY‚É¸”s‚µ‚Ü‚µ‚½B", "Program09", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+					MessageBox.Show("ç›£è¦–ãƒ—ãƒªãƒ³ã‚¿ã®ã‚¯ãƒ­ãƒ¼ã‚ºã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "Program09", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 				End If
 			Else
-				MessageBox.Show("ŠÄ‹ƒvƒŠƒ“ƒ^‚ÌƒI[ƒvƒ“‚É¸”s‚µ‚Ü‚µ‚½B", "Program09", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+				MessageBox.Show("ç›£è¦–ãƒ—ãƒªãƒ³ã‚¿ã®ã‚ªãƒ¼ãƒ—ãƒ³ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "Program09", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 			End If
 
 		Catch ex As Exception
-			MessageBox.Show("StatusAPI‚Ìƒ[ƒh‚É¸”s‚µ‚Ü‚µ‚½B", "Program09", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+			MessageBox.Show("StatusAPIã®ãƒ­ãƒ¼ãƒ‰ã«å¤±æ•—ã—ã¾ã—ãŸã€‚", "Program09", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 		Finally
 			m_objAPI.CancelStatusBack()
 		End Try
